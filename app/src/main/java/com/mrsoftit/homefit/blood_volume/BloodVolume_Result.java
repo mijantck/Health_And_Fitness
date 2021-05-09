@@ -44,10 +44,7 @@ public class BloodVolume_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.rl_main = (LinearLayout) findViewById(R.id.rl_main);
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
@@ -57,21 +54,9 @@ public class BloodVolume_Result extends Activity {
         this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
 //        this.rl_main.setBackgroundResource(R.drawable.popup_background_gradient6);
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    BloodVolume_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    BloodVolume_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         StringBuilder sb = new StringBuilder();
         sb.append("");
@@ -98,9 +83,9 @@ public class BloodVolume_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

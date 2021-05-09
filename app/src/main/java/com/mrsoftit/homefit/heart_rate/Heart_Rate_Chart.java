@@ -21,7 +21,6 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Heart_Rate_Chart extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
     GlobalFunction globalFunction;
     ImageView iv_back;
     SharedPreferenceManager sharedPreferenceManager;
@@ -181,26 +180,11 @@ public class Heart_Rate_Chart extends Activity {
         this.tv_hr85.setTypeface(this.typefaceManager.getLight());
         this.tv_hr90.setTypeface(this.typefaceManager.getLight());
         this.tv_hr95.setTypeface(this.typefaceManager.getLight());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Heart_Rate_Chart.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Heart_Rate_Chart.this.adView.setVisibility(8);
-                }
-            });
+        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
+
+        } else {
+
         }
         this.iv_back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
@@ -244,9 +228,9 @@ public class Heart_Rate_Chart extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

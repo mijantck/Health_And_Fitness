@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class Daily_WaterIntake_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_weight;
     ArrayList<String> arraylist_weight = new ArrayList<>();
     EditText et_weight;
@@ -68,10 +68,7 @@ public class Daily_WaterIntake_Calculator extends Activity {
         this.globalFunction = new GlobalFunction(this);
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.globalFunction.set_locale_language();
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
         this.et_weight = (EditText) findViewById(R.id.et_weight);
         this.tv_weight = (TextView) findViewById(R.id.tv_weight);
@@ -211,7 +208,7 @@ public class Daily_WaterIntake_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

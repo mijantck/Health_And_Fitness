@@ -50,10 +50,6 @@ public class Alcohol_Result extends Activity {
         this.tv_alcohol_result = (TextView) findViewById(R.id.tv_alcohol_result);
         this.tv_alcohol_result_chart = (TextView) findViewById(R.id.tv_alcohol_result_chart);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         this.tv_alcohol_result.setTypeface(this.typefaceManager.getLight());
         this.tv_alcohol_result_chart.setTypeface(this.typefaceManager.getBold());

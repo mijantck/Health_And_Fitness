@@ -24,7 +24,6 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 public class Waist_Height_Ratio_Result extends Activity {
     String Body;
     String TAG = getClass().getSimpleName();
-    AdView adView;
     Bundle extras;
     GlobalFunction globalFunction;
     ImageView iv_close;
@@ -49,10 +48,7 @@ public class Waist_Height_Ratio_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.rl_main = (RelativeLayout) findViewById(R.id.rl_main);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.iv_imoji = (ImageView) findViewById(R.id.iv_imoji);
@@ -64,7 +60,7 @@ public class Waist_Height_Ratio_Result extends Activity {
         this.tv_ans_bmr = (TextView) findViewById(R.id.tv_ans_bmr);
         this.tv_ans_healthrisk = (TextView) findViewById(R.id.tv_ans_healthrisk);
         this.tv_whr_chart = (TextView) findViewById(R.id.tv_whr_chart);
-        this.tv_whr_chart.setVisibility(8);
+        this.tv_whr_chart.setVisibility(View.GONE);
         this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
         this.tv_ans_healthrisk.setTypeface(this.typefaceManager.getLight());
         this.tv_whr_chart.setTypeface(this.typefaceManager.getLight());
@@ -72,21 +68,9 @@ public class Waist_Height_Ratio_Result extends Activity {
             getWindow().addFlags(67108864);
         }
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Waist_Height_Ratio_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Waist_Height_Ratio_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         StringBuilder sb = new StringBuilder();
         sb.append("");
@@ -134,9 +118,9 @@ public class Waist_Height_Ratio_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

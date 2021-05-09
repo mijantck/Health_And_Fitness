@@ -20,7 +20,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Children_Predicted_Height_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     Bundle extras;
     GlobalFunction globalFunction;
     ImageView iv_close;
@@ -45,29 +45,13 @@ public class Children_Predicted_Height_Result extends Activity {
         this.tv_ans_child_predicted_Height = (TextView) findViewById(R.id.tv_ans_child_predicted_Height);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.tv_ans_child_predicted_Height.setTypeface(this.typefaceManager.getLight());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Children_Predicted_Height_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Children_Predicted_Height_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
         }
         this.extras = getIntent().getExtras();
         this.predicted_height = Float.valueOf(this.extras.getFloat("child_predicted_height"));
@@ -90,9 +74,9 @@ public class Children_Predicted_Height_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

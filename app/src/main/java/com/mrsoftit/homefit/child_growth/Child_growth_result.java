@@ -20,7 +20,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Child_growth_result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     String age;
     Bundle extras;
     GlobalFunction globalFunction;
@@ -55,26 +55,11 @@ public class Child_growth_result extends Activity {
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Child_growth_result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Child_growth_result.this.adView.setVisibility(8);
-                }
-            });
+        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
+
+        } else {
+
         }
         this.extras = getIntent().getExtras();
         this.age = this.extras.getString("age");
@@ -99,9 +84,9 @@ public class Child_growth_result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

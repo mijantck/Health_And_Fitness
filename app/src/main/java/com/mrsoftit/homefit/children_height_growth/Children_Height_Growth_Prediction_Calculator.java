@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class Children_Height_Growth_Prediction_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayAdapter<String> adapter_height;
     ArrayList<String> arraylist_gender = new ArrayList<>();
@@ -111,10 +111,7 @@ public class Children_Height_Growth_Prediction_Calculator extends Activity {
         this.tv_heightunit_father.setOnClickListener(showPopupWindowHeight_father());
         this.adapter_gender = new ArrayAdapter<>(this, R.layout.spinner_item, R.id.text1, this.arraylist_gender);
         this.adapter_height = new ArrayAdapter<>(this, R.layout.spinner_item, R.id.text1, this.arraylist_height);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_search_predicted_height.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 if (Children_Height_Growth_Prediction_Calculator.this.et_mother_height.getText().toString().trim().equals("") || Children_Height_Growth_Prediction_Calculator.this.et_mother_height.getText().toString().trim().equals(".")) {
@@ -375,7 +372,7 @@ public class Children_Height_Growth_Prediction_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 }

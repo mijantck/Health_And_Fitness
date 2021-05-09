@@ -54,7 +54,7 @@ public class Heart_Rate_Calculator extends Activity {
     public static double target_heart_rate90;
     public static double target_heart_rate95;
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     EditText et_age;
     EditText et_heart_rate;
     GlobalFunction globalFunction;
@@ -87,10 +87,7 @@ public class Heart_Rate_Calculator extends Activity {
         this.et_age.setTypeface(this.typefaceManager.getLight());
         this.et_heart_rate.setTypeface(this.typefaceManager.getLight());
         this.tv_heartrate.setTypeface(this.typefaceManager.getBold());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.iv_back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Heart_Rate_Calculator.this.onBackPressed();
@@ -312,7 +309,7 @@ public class Heart_Rate_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 }

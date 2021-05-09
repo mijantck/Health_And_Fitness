@@ -104,9 +104,7 @@ public class Alcohol_Calculator extends Activity {
         this.tv_genderunit = (TextView) findViewById(R.id.tv_genderunit);
         this.tv_alcohol = (TextView) findViewById(R.id.tv_alcohol);
         this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
         this.tv_alcohol.setTypeface(this.typefaceManager.getBold());
         this.tv_search_bloodalcohol_content.setTypeface(this.typefaceManager.getBold());
@@ -330,7 +328,6 @@ public class Alcohol_Calculator extends Activity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        this.adView.setVisibility(8);
         ActivityCompat.finishAfterTransition(this);
     }
 

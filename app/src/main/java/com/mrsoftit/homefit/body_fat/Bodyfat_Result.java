@@ -25,7 +25,7 @@ import java.io.PrintStream;
 
 public class Bodyfat_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     int age;
     double bodyfat;
     Bundle extras;
@@ -53,10 +53,7 @@ public class Bodyfat_Result extends Activity {
         this.globalFunction = new GlobalFunction(this);
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.extras = getIntent().getExtras();
         this.age = this.extras.getInt("age");
         this.gender = this.extras.getString("gender");

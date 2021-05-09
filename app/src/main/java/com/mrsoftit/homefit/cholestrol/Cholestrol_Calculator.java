@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class Cholestrol_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_cholestrol;
     ArrayList<String> arraylist_cholestrol = new ArrayList<>();
     EditText et_hdl;
@@ -77,10 +77,7 @@ public class Cholestrol_Calculator extends Activity {
         this.et_hdl = (EditText) findViewById(R.id.et_hdl);
         this.et_ldl = (EditText) findViewById(R.id.et_ldl);
         this.et_triglyceride = (EditText) findViewById(R.id.et_triglyceride);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.et_hdl.setTypeface(this.typefaceManager.getLight());
         this.et_ldl.setTypeface(this.typefaceManager.getLight());
         this.tv_cholestrol.setTypeface(this.typefaceManager.getBold());
@@ -229,7 +226,6 @@ public class Cholestrol_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
         ActivityCompat.finishAfterTransition(this);
     }
 

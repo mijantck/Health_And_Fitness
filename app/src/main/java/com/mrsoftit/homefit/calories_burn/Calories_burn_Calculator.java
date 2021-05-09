@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class Calories_burn_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_distance;
     ArrayAdapter<String> adapter_runwalk;
     ArrayAdapter<String> adapter_weight;
@@ -94,10 +94,7 @@ public class Calories_burn_Calculator extends Activity {
         this.tv_distance_unit = (TextView) findViewById(R.id.tv_distance_unit);
         this.tv_runwalk_unit = (TextView) findViewById(R.id.tv_runwalk_unit);
         this.tv_search_burn_calories = (TextView) findViewById(R.id.tv_search_burn_calories);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.et_weight.setTypeface(this.typefaceManager.getLight());
         this.et_distance.setTypeface(this.typefaceManager.getLight());
         this.tv_runwalk.setTypeface(this.typefaceManager.getLight());
@@ -410,7 +407,7 @@ public class Calories_burn_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 }

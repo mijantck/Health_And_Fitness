@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
 public class Body_Frame_Size_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayAdapter<String> adapter_height;
     ArrayAdapter<String> adapter_wrist;
@@ -92,10 +92,6 @@ public class Body_Frame_Size_Calculator extends Activity {
         this.small_bodyframe = getString(R.string.Body_frame_text_small);
         this.medium_bodyframe = getString(R.string.Body_frame_text_medium);
         this.large_bodyframe = getString(R.string.Body_frame_text_large);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         this.et_height = (EditText) findViewById(R.id.et_height);
         this.et_weight = (EditText) findViewById(R.id.et_weight);
         this.tv_body_frame = (TextView) findViewById(R.id.tv_body_frame);
@@ -337,7 +333,7 @@ public class Body_Frame_Size_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

@@ -27,7 +27,7 @@ import java.io.PrintStream;
 
 public class Body_Adiposity_Index_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     String bai;
     Bundle extras;
     GlobalFunction globalFunction;
@@ -51,10 +51,8 @@ public class Body_Adiposity_Index_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
+
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.extras = getIntent().getExtras();

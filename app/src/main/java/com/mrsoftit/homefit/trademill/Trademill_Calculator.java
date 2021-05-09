@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class Trademill_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayList<String> arraylist_gender = new ArrayList<>();
     EditText et_minute;
@@ -75,10 +75,7 @@ public class Trademill_Calculator extends Activity {
         this.tv_calculate_trademill = (TextView) findViewById(R.id.tv_calculate_trademill);
         this.et_minute = (EditText) findViewById(R.id.et_minute);
         this.tv_trademill = (TextView) findViewById(R.id.tv_trademill);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_trademill.setTypeface(this.typefaceManager.getBold());
         this.tv_calculate_trademill.setTypeface(this.typefaceManager.getBold());
         if (VERSION.SDK_INT >= 21) {
@@ -177,7 +174,7 @@ public class Trademill_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

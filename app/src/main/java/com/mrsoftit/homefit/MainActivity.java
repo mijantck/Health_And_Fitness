@@ -88,9 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     @SuppressLint("ResourceType")
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (VERSION.SDK_INT > 21) {
-            StrictMode.setThreadPolicy(new Builder().permitAll().build());
-        }
+        StrictMode.setThreadPolicy(new Builder().permitAll().build());
         setContentView((int) R.layout.activity_main);
 
 //        StepDetectionServiceHelper.startAllIfEnabled(true, MainActivity.this);

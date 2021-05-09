@@ -62,12 +62,4 @@
         android:padding="5dp"
         android:text="@string/View_Chart"
         android:textColor="@color/white" />
-
-    <include
-        android:id="@+id/ad_layout"
-        layout="@layout/native_ad_popup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_bloodpressure_chart"
-        android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" />
 </RelativeLayout>

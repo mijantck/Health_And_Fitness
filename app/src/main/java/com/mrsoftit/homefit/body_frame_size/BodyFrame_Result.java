@@ -22,7 +22,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class BodyFrame_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     String body_frame;
     Bundle extras;
     GlobalFunction globalFunction;
@@ -44,10 +44,7 @@ public class BodyFrame_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.extras = getIntent().getExtras();
         this.body_frame = this.extras.getString("body_frame");
@@ -56,21 +53,9 @@ public class BodyFrame_Result extends Activity {
         this.iv_imoji = (ImageView) findViewById(R.id.iv_imoji);
         this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    BodyFrame_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    BodyFrame_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
@@ -103,9 +88,9 @@ public class BodyFrame_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

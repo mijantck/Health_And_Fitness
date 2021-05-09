@@ -22,7 +22,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 public class Daily_Calories_Intake_Chart extends Activity {
     String TAG = getClass().getSimpleName();
     TextView active1;
-    AdView adView;
+
     TextView age1;
     Bundle extras;
     int gain;
@@ -77,10 +77,7 @@ public class Daily_Calories_Intake_Chart extends Activity {
         this.tv_sedentary1 = (TextView) findViewById(R.id.tv_sedentary1);
         this.tv_lowactivity1 = (TextView) findViewById(R.id.tv_lowactivity1);
         this.active1 = (TextView) findViewById(R.id.active1);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_title.setTypeface(this.typefaceManager.getBold());
         this.tv_maintain.setTypeface(this.typefaceManager.getLight());
         this.tv_gain.setTypeface(this.typefaceManager.getLight());
@@ -101,21 +98,9 @@ public class Daily_Calories_Intake_Chart extends Activity {
             getWindow().addFlags(67108864);
         }
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Daily_Calories_Intake_Chart.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Daily_Calories_Intake_Chart.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         this.extras = getIntent().getExtras();
         this.maintain = this.extras.getInt("maintain");
@@ -164,9 +149,9 @@ public class Daily_Calories_Intake_Chart extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

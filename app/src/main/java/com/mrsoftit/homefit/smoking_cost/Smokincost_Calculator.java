@@ -32,7 +32,7 @@ import java.io.PrintStream;
 
 public class Smokincost_Calculator extends AppCompatActivity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     EditText et_cig_inpack;
     EditText et_cig_price;
     EditText et_cig_smoked;
@@ -64,10 +64,7 @@ public class Smokincost_Calculator extends AppCompatActivity {
         this.et_cig_smoked = (EditText) findViewById(R.id.et_cig_smoked);
         this.et_cig_inpack = (EditText) findViewById(R.id.et_cig_inpack);
         this.et_cig_price = (EditText) findViewById(R.id.et_cig_price);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_count_smoking_cost = (TextView) findViewById(R.id.tv_count_smoking_cost);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

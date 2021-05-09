@@ -23,7 +23,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Chest_Hip_Ratio_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     String chr;
     String chr_percentage;
     Bundle extras;
@@ -48,10 +48,7 @@ public class Chest_Hip_Ratio_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.rl_main = (RelativeLayout) findViewById(R.id.rl_main);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
@@ -63,27 +60,15 @@ public class Chest_Hip_Ratio_Result extends Activity {
         this.tv_whr_chart = (TextView) findViewById(R.id.tv_whr_chart);
         this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
         this.tv_ans_healthrisk.setTypeface(this.typefaceManager.getLight());
-        this.tv_whr_chart.setVisibility(8);
+        this.tv_whr_chart.setVisibility(View.GONE);
 //        this.rl_main.setBackgroundResource(R.drawable.popup_background_gradient5);
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Chest_Hip_Ratio_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Chest_Hip_Ratio_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         StringBuilder sb = new StringBuilder();
         sb.append("");
@@ -116,9 +101,9 @@ public class Chest_Hip_Ratio_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

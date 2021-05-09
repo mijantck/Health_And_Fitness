@@ -28,7 +28,7 @@ public class Daily_Calories_Intake_Result extends Activity {
     int BMR;
     String TAG = getClass().getSimpleName();
     String activity_level;
-    AdView adView;
+
     int cal_togain;
     int cal_tolose;
     Double cal_tomaintain;
@@ -61,10 +61,7 @@ public class Daily_Calories_Intake_Result extends Activity {
         this.tv_bmr_result.setTypeface(this.typefaceManager.getLight());
         this.tv_burn_cal.setTypeface(this.typefaceManager.getLight());
         this.tv_calories_chart.setTypeface(this.typefaceManager.getBold());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }

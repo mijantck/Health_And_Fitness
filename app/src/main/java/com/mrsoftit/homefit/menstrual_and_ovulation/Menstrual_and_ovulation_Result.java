@@ -23,7 +23,7 @@ import java.util.Date;
 
 public class Menstrual_and_ovulation_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     String curr_date;
     Bundle extras;
     GlobalFunction globalFunction;
@@ -54,10 +54,7 @@ public class Menstrual_and_ovulation_Result extends Activity {
         this.tv_next_date = (TextView) findViewById(R.id.tv_next_date);
         this.tv_ovulation1 = (TextView) findViewById(R.id.tv_ovulation1);
         this.tv_ovulation2 = (TextView) findViewById(R.id.tv_ovulation2);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_next_date.setTypeface(this.typefaceManager.getLight());
         this.tv_ovulation1.setTypeface(this.typefaceManager.getLight());
         this.tv_ovulation2.setTypeface(this.typefaceManager.getLight());
@@ -100,23 +97,7 @@ public class Menstrual_and_ovulation_Result extends Activity {
         sb4.append("-");
         sb4.append(this.nextdate2_ovulation);
         textView3.setText(sb4.toString());
-        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Menstrual_and_ovulation_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Menstrual_and_ovulation_Result.this.adView.setVisibility(8);
-                }
-            });
-        }
         this.iv_close.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Menstrual_and_ovulation_Result.this.onBackPressed();
@@ -124,13 +105,4 @@ public class Menstrual_and_ovulation_Result extends Activity {
         });
     }
 
-
-    public void onResume() {
-        super.onResume();
-        if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
-        } else {
-            this.adView.setVisibility(8);
-        }
-    }
 }

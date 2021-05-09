@@ -35,7 +35,6 @@ import java.util.Locale;
 
 public class Pregnancy_Due_Date_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
     String eligieble_date;
     GlobalFunction globalFunction;
     ImageView iv_back;
@@ -67,10 +66,7 @@ public class Pregnancy_Due_Date_Calculator extends Activity {
         this.tv_pregnancy = (TextView) findViewById(R.id.tv_pregnancy);
         this.tv_search_date = (TextView) findViewById(R.id.tv_search_date);
         this.tv_date = (TextView) findViewById(R.id.tv_date);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_date.setFocusable(true);
         this.tv_date.setFocusableInTouchMode(true);
         this.tv_date.requestFocus();
@@ -170,7 +166,7 @@ public class Pregnancy_Due_Date_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

@@ -59,12 +59,6 @@ public class BloodPressure_Calculator extends Activity {
         this.tv_bloodpressure = (TextView) findViewById(R.id.tv_bloodpressure);
         this.tv_calculate_bloodpressure = (TextView) findViewById(R.id.tv_calculate_bloodpressure);
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
-        this.adView = (AdView) findViewById(R.id.adView);
-
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
         this.tv_bloodpressure.setTypeface(this.typefaceManager.getBold());
         this.tv_calculate_bloodpressure.setTypeface(this.typefaceManager.getBold());
         if (VERSION.SDK_INT >= 21) {
@@ -154,7 +148,7 @@ public class BloodPressure_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

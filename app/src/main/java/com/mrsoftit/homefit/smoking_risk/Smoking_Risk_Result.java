@@ -19,7 +19,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Smoking_Risk_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     Bundle extras;
     GlobalFunction globalFunction;
     ImageView iv_close;
@@ -43,30 +43,15 @@ public class Smoking_Risk_Result extends Activity {
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.tv_smoking_risk_result = (TextView) findViewById(R.id.tv_smoking_risk_result);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_smoking_risk_result.setTypeface(this.typefaceManager.getLight());
         this.extras = getIntent().getExtras();
         this.smoking_risk_msg = this.extras.getString("smoking_risk_msg");
         this.tv_smoking_risk_result.setText(this.smoking_risk_msg);
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Smoking_Risk_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Smoking_Risk_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         this.iv_close.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

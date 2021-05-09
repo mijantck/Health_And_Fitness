@@ -176,6 +176,9 @@ public class MainFragment extends Fragment {
         this.mainAcdsctivity = mainActivity;
     }
 
+    public MainFragment() {
+    }
+
     public static MainFragment newInstance(String str, String str2, MainActivity mainActivity) {
         MainFragment mainFragment = new MainFragment(mainActivity);
         Bundle bundle = new Bundle();

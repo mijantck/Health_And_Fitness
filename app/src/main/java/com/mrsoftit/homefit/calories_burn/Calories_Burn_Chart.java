@@ -21,7 +21,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Calories_Burn_Chart extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     GlobalFunction globalFunction;
     ImageView iv_back;
     SharedPreferenceManager sharedPreferenceManager;
@@ -92,26 +92,11 @@ public class Calories_Burn_Chart extends Activity {
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Calories_Burn_Chart.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Calories_Burn_Chart.this.adView.setVisibility(8);
-                }
-            });
+        if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
+
+        } else {
+
         }
         this.iv_back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
@@ -132,9 +117,9 @@ public class Calories_Burn_Chart extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

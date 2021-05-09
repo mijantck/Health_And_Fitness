@@ -42,11 +42,4 @@
         android:textSize="@dimen/textsize_16"
         android:textStyle="bold" />
 
-    <include
-        android:id="@+id/ad_layout"
-        layout="@layout/native_ad_popup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ans_child_predicted_Height"
-        android:layout_gravity="center" />
 </RelativeLayout>

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class Ideal_Body_Weight_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_bodyframe;
     ArrayAdapter<String> adapter_gender;
     ArrayAdapter<String> adapter_height;
@@ -100,10 +100,6 @@ public class Ideal_Body_Weight_Calculator extends Activity {
         this.tv_select.setTypeface(this.typefaceManager.getLight());
         this.tv_bodyframe.setTypeface(this.typefaceManager.getLight());
         this.tv_body_body_weight.setTypeface(this.typefaceManager.getBold());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
@@ -395,7 +391,7 @@ public class Ideal_Body_Weight_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 }

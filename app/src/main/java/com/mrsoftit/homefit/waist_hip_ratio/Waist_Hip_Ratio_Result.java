@@ -28,7 +28,7 @@ import java.io.PrintStream;
 
 public class Waist_Hip_Ratio_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     Bundle extras;
     GlobalFunction globalFunction;
     String health_risk;
@@ -54,10 +54,7 @@ public class Waist_Hip_Ratio_Result extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.rl_main = (RelativeLayout) findViewById(R.id.rl_main);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.iv_imoji = (ImageView) findViewById(R.id.iv_imoji);

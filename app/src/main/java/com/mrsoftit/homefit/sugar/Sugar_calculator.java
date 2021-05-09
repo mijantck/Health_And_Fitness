@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class Sugar_calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_sugar;
     ArrayList<String> arraylist_sugar = new ArrayList<>();
     Double blood_sugarval;
@@ -71,10 +71,7 @@ public class Sugar_calculator extends Activity {
         this.tv_sugar_unit = (TextView) findViewById(R.id.tv_sugar_unit);
         this.et_sugar_value = (EditText) findViewById(R.id.et_sugar_value);
         this.tv_caluculate_blood_sugar = (TextView) findViewById(R.id.tv_caluculate_blood_sugar);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_sugar_unit.setOnClickListener(showPopupWindowTime());
         this.arraylist_sugar.clear();
         this.arraylist_sugar.add(getString(R.string.mmol));
@@ -172,7 +169,6 @@ public class Sugar_calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
         ActivityCompat.finishAfterTransition(this);
     }
 

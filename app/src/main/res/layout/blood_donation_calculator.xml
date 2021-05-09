@@ -53,7 +53,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/textsize_16" />
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/cardviewone"
         android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
@@ -64,9 +64,7 @@
         android:layout_marginTop="10dp"
 
         android:layout_marginRight="@dimen/text_15"
-        android:orientation="horizontal"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="20dip">
+        android:orientation="horizontal">
 
 
     <ScrollView
@@ -95,7 +93,7 @@
                 android:textColorHint="@color/black"
                 android:textSize="@dimen/textsize_14" />
 
-            <com.mrsoftit.homefit.shashikant.calendar.SNPCalendarView
+          <!--  <com.mrsoftit.homefit.shashikant.calendar.SNPCalendarView
                 android:id="@+id/mFCalendarView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +102,7 @@
                 android:background="@color/line_color"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp" />-->
 
             <TextView
                 android:id="@+id/tv_search_date"
@@ -124,13 +122,5 @@
         </LinearLayout>
     </ScrollView>
 
-    </androidx.cardview.widget.CardView>
-
-    <include
-        android:id="@+id/ad_layout"
-        layout="@layout/native_ad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true" />
+    </LinearLayout>
 </RelativeLayout>

@@ -42,7 +42,7 @@ public class Daily_Calories_Intake_Calculator extends Activity {
     Double BMR;
     String TAG = getClass().getSimpleName();
     String activity_level = "";
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayAdapter<String> adapter_height;
     ArrayAdapter<String> adapter_weight;
@@ -112,10 +112,7 @@ public class Daily_Calories_Intake_Calculator extends Activity {
         this.tv_weightunit.setTypeface(this.typefaceManager.getLight());
         this.tv_gender.setTypeface(this.typefaceManager.getLight());
         this.tv_select_level.setTypeface(this.typefaceManager.getLight());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
@@ -418,7 +415,7 @@ public class Daily_Calories_Intake_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 }

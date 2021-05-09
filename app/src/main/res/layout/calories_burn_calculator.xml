@@ -26,7 +26,7 @@
 
 
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/cardviewone"
         android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
@@ -221,13 +221,6 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    </androidx.cardview.widget.CardView>
-    <include
-        android:id="@+id/ad_layout"
-        layout="@layout/native_ad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" />
+    </LinearLayout>
+
 </RelativeLayout>

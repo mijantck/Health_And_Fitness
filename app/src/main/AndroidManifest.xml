@@ -883,7 +883,7 @@
         <!--        walk and step-->
 
         <activity
-            android:name=".WalkandStep.activities.MainActivity"
+            android:name="com.mrsoftit.homefit.WalkandStep.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme_walk.NoActionBar_walk"/>
 

@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 public class Child_Growth_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_month;
     ArrayList<String> arraylist_month = new ArrayList<>();
     GlobalFunction globalFunction;
@@ -77,10 +77,7 @@ public class Child_Growth_Calculator extends Activity {
         this.tv_childmonth = (TextView) findViewById(R.id.tv_childmonth);
         this.tv_search_headcircumference = (TextView) findViewById(R.id.tv_search_headcircumference);
         this.tv_select_age = (TextView) findViewById(R.id.tv_search_headcircumference);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_childmonth.setOnClickListener(showPopupWindow_month());
         this.tv_child_growth.setTypeface(this.typefaceManager.getBold());
         this.tv_childmonth.setTypeface(this.typefaceManager.getLight());
@@ -826,7 +823,6 @@ public class Child_Growth_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
         ActivityCompat.finishAfterTransition(this);
     }
 }

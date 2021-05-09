@@ -22,7 +22,6 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class Sugar_Chart extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
     GlobalFunction globalFunction;
     ImageView iv_back;
     SharedPreferenceManager sharedPreferenceManager;
@@ -55,10 +54,7 @@ public class Sugar_Chart extends Activity {
         this.sharedPreferenceManager = new SharedPreferenceManager(this);
         this.globalFunction = new GlobalFunction(this);
         this.typefaceManager = new TypefaceManager(getAssets(), this);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_title = (TextView) findViewById(R.id.tv_title);
         this.tv_bodyfat = (TextView) findViewById(R.id.tv_bodyfat);
         this.tv_fat_level = (TextView) findViewById(R.id.tv_fat_level);
@@ -95,21 +91,8 @@ public class Sugar_Chart extends Activity {
         this.tv_athletes.setTypeface(this.typefaceManager.getBold());
         this.tv_fitness.setTypeface(this.typefaceManager.getBold());
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Sugar_Chart.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Sugar_Chart.this.adView.setVisibility(8);
-                }
-            });
+        } else {
         }
         this.iv_back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
@@ -135,9 +118,9 @@ public class Sugar_Chart extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class Bodyfat_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayAdapter<String> adapter_height;
     ArrayAdapter<String> adapter_weight;
@@ -86,10 +86,7 @@ public class Bodyfat_Calculator extends Activity {
         this.globalFunction = new GlobalFunction(this);
         this.globalFunction.set_locale_language();
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.et_height = (EditText) findViewById(R.id.et_height);
         this.et_weight = (EditText) findViewById(R.id.et_weight);
         this.et_age = (EditText) findViewById(R.id.et_age);
@@ -462,7 +459,6 @@ public class Bodyfat_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
         ActivityCompat.finishAfterTransition(this);
     }
 }

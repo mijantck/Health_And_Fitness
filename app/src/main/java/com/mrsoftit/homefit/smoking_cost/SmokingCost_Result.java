@@ -17,7 +17,7 @@ import com.mrsoftit.homefit.utils.TypefaceManager;
 
 public class SmokingCost_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     Bundle extras;
     GlobalFunction globalFunction;
     Double monthly_expense;
@@ -45,10 +45,7 @@ public class SmokingCost_Result extends Activity {
         this.tv_smokingcost_week = (TextView) findViewById(R.id.tv_smokingcost_week);
         this.tv_smokingcost_month = (TextView) findViewById(R.id.tv_smokingcost_month);
         this.tv_smokingcost_year = (TextView) findViewById(R.id.tv_smokingcost_year);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_smokingcost_week.setTypeface(this.typefaceManager.getLight());
         this.tv_smokingcost_month.setTypeface(this.typefaceManager.getLight());
         this.tv_smokingcost_year.setTypeface(this.typefaceManager.getLight());
@@ -75,31 +72,19 @@ public class SmokingCost_Result extends Activity {
             getWindow().addFlags(67108864);
         }
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
+
             return;
         }
-        this.adView.setVisibility(0);
-        this.adView.loadAd(new Builder().build());
-        this.adView.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                SmokingCost_Result.this.adView.setVisibility(0);
-            }
 
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-                SmokingCost_Result.this.adView.setVisibility(8);
-            }
-        });
     }
 
 
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

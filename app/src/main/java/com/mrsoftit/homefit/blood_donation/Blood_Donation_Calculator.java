@@ -38,7 +38,7 @@ public class Blood_Donation_Calculator extends Activity {
     String eligieble_date;
     GlobalFunction globalFunction;
     ImageView iv_back;
-    SNPCalendarView mFCalendarView;
+  //  SNPCalendarView mFCalendarView;
     String prev_date;
     SharedPreferenceManager sharedPreferenceManager;
     String todays_date;
@@ -61,16 +61,12 @@ public class Blood_Donation_Calculator extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.globalFunction.set_locale_language();
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
-        this.mFCalendarView = (SNPCalendarView) findViewById(R.id.mFCalendarView);
+       // this.mFCalendarView = (SNPCalendarView) findViewById(R.id.mFCalendarView);
         this.tv_search_date = (TextView) findViewById(R.id.tv_search_date);
         this.tv_date = (TextView) findViewById(R.id.tv_date);
         this.tv_blood_donation = (TextView) findViewById(R.id.tv_blood_donation);
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
-        this.adView = (AdView) findViewById(R.id.adView);
 
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         this.tv_blood_donation.setTypeface(this.typefaceManager.getBold());
         this.tv_search_date.setTypeface(this.typefaceManager.getBold());
@@ -106,7 +102,7 @@ public class Blood_Donation_Calculator extends Activity {
                 Blood_Donation_Calculator.this.startActivity(intent);
             }
         });
-        this.mFCalendarView.setOnCalendarViewListener(new onSNPCalendarViewListener() {
+      /*  this.mFCalendarView.setOnCalendarViewListener(new onSNPCalendarViewListener() {
             public void onDisplayedMonthChanged(int i, int i2, String str) {
             }
 
@@ -122,7 +118,7 @@ public class Blood_Donation_Calculator extends Activity {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
     }
 
     private String getDateTime() {
@@ -160,7 +156,7 @@ public class Blood_Donation_Calculator extends Activity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

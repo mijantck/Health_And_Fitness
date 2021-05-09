@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class Waist_Hip_Ratio_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_wrist;
     ArrayList<String> arraylist_gender = new ArrayList<>();
     ArrayList<String> arraylist_wrist = new ArrayList<>();
@@ -81,12 +81,6 @@ public class Waist_Hip_Ratio_Calculator extends Activity {
         this.typefaceManager = new TypefaceManager(getAssets(), this);
         this.globalFunction.set_locale_language();
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
-        this.adView = (AdView) findViewById(R.id.adView);
-
-
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         this.et_height = (EditText) findViewById(R.id.et_height);
         this.et_weight = (EditText) findViewById(R.id.et_weight);
         this.tv_heightunit = (TextView) findViewById(R.id.tv_heightunit);
@@ -289,7 +283,7 @@ public class Waist_Hip_Ratio_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

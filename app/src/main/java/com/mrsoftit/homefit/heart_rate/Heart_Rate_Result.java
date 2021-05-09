@@ -25,7 +25,7 @@ import java.io.PrintStream;
 
 public class Heart_Rate_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     GlobalFunction globalFunction;
     ImageView iv_close;
     SharedPreferenceManager sharedPreferenceManager;
@@ -51,10 +51,6 @@ public class Heart_Rate_Result extends Activity {
         this.tv_heartrate_chart = (TextView) findViewById(R.id.tv_heartrate_chart);
         this.tv_ans_heartrate.setTypeface(this.typefaceManager.getLight());
         this.tv_heartrate_chart.setTypeface(this.typefaceManager.getBold());
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }

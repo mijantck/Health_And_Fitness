@@ -27,7 +27,7 @@ import java.io.PrintStream;
 public class Sugar_Result extends Activity {
     String TAG = getClass().getSimpleName();
     AdRequest adRequest;
-    AdView adView;
+
     ConnectionDetector connectionDetector;
     Bundle extras;
     Double final_bloodsugar_val;
@@ -54,10 +54,6 @@ public class Sugar_Result extends Activity {
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.tv_ans_bloodsugar = (TextView) findViewById(R.id.tv_ans_bloodsugar);
         this.tv_bloodsugar_chart = (TextView) findViewById(R.id.tv_bloodsugar_chart);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.tv_ans_bloodsugar.setTypeface(this.typefaceManager.getLight());

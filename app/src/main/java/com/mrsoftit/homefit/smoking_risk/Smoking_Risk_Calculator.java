@@ -48,7 +48,7 @@ import java.text.ParseException;
 
 public class Smoking_Risk_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_gender;
     ArrayList<String> arraylist_gender = new ArrayList<>();
     String end_date;
@@ -100,11 +100,7 @@ public class Smoking_Risk_Calculator extends Activity {
         this.tv_gender = (TextView) findViewById(R.id.tv_gender);
         this.tv_search_bloodsmokingrisk = (TextView) findViewById(R.id.tv_search_bloodsmokingrisk);
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
-        this.adView = (AdView) findViewById(R.id.adView);
 
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         this.start_date = getDateTime();
         this.end_date = getDateTime();
@@ -414,7 +410,7 @@ public class Smoking_Risk_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

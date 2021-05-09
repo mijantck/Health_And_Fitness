@@ -54,10 +54,7 @@ public class BloodPressure_Result extends Activity {
         this.tv_diastolic_ans = (TextView) findViewById(R.id.tv_diastolic_ans);
         this.tv_bloodpressure_chart = (TextView) findViewById(R.id.tv_bloodpressure_chart);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.tv_bloodpressure_chart.setTypeface(this.typefaceManager.getBold());
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.extras = getIntent().getExtras();

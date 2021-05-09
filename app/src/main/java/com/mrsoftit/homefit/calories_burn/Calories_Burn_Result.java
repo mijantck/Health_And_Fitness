@@ -26,7 +26,7 @@ import java.io.PrintStream;
 
 public class Calories_Burn_Result extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     float caloriesburn;
     Bundle extras;
     GlobalFunction globalFunction;
@@ -64,10 +64,6 @@ public class Calories_Burn_Result extends Activity {
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         this.extras = getIntent().getExtras();
         this.caloriesburn = this.extras.getFloat("caloriesburn");
         this.tips = this.extras.getString("tips");

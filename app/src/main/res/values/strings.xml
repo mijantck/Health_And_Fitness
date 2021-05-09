@@ -1,16 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Home &amp; Fitness</string>
 
-<!--
 
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+   <!-- <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
 
     <string name="banner_ad">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="g_native">ca-app-pub-3940256099942544/2247696110</string>
 
-    <string name="interstitial_key">ca-app-pub-3940256099942544/1033173712</string>
--->
+    <string name="interstitial_key">ca-app-pub-3940256099942544/1033173712</string>-->
 
     <string name="admob_app_id">ca-app-pub-3478064646940993~5037993430</string>
 

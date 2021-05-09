@@ -48,10 +48,7 @@ public class Blood_Donation_Result extends Activity {
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
         this.tv_prev_date = (TextView) findViewById(R.id.tv_prev_date);
         this.tv_next_date = (TextView) findViewById(R.id.tv_next_date);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.rl_main = (RelativeLayout) findViewById(R.id.rl_main);
         this.tv_prev_date.setTypeface(this.typefaceManager.getLight());
@@ -66,21 +63,9 @@ public class Blood_Donation_Result extends Activity {
             }
         });
         if (this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(8);
-        } else {
-            this.adView.setVisibility(0);
-            this.adView.loadAd(new Builder().build());
-            this.adView.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Blood_Donation_Result.this.adView.setVisibility(0);
-                }
 
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Blood_Donation_Result.this.adView.setVisibility(8);
-                }
-            });
+        } else {
+
         }
         if (this.flag.equals("0")) {
             TextView textView = this.tv_prev_date;
@@ -117,9 +102,9 @@ public class Blood_Donation_Result extends Activity {
     public void onResume() {
         super.onResume();
         if (!this.sharedPreferenceManager.get_Remove_Ad().booleanValue()) {
-            this.adView.setVisibility(0);
+
         } else {
-            this.adView.setVisibility(8);
+
         }
     }
 }

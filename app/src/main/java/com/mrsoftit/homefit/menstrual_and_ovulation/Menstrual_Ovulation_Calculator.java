@@ -42,7 +42,7 @@ import java.util.Locale;
 
 public class Menstrual_Ovulation_Calculator extends Activity {
     String TAG = getClass().getSimpleName();
-    AdView adView;
+
     ArrayAdapter<String> adapter_time;
     ArrayList<String> arraylist_time = new ArrayList<>();
     String curr_date;
@@ -84,10 +84,6 @@ public class Menstrual_Ovulation_Calculator extends Activity {
         this.mFCalendarView = (SNPCalendarView) findViewById(R.id.mFCalendarView);
         this.tv_cycle_days = (TextView) findViewById(R.id.tv_cycle_days);
         this.tv_calculate_mco = (TextView) findViewById(R.id.tv_calculate_mco);
-        this.adView = (AdView) findViewById(R.id.adView);
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         this.iv_back = (ImageView) findViewById(R.id.iv_back);
         this.tv_menstrual = (TextView) findViewById(R.id.tv_menstrual);
         this.globalFunction.sendAnalyticsData(this.TAG, this.TAG);
@@ -375,7 +371,7 @@ public class Menstrual_Ovulation_Calculator extends Activity {
     }
 
     public void onBackPressed() {
-        this.adView.setVisibility(8);
+
         ActivityCompat.finishAfterTransition(this);
     }
 

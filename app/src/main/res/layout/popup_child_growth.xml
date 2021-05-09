@@ -81,11 +81,4 @@
         android:textColor="@color/black"
         android:visibility="gone" />
 
-    <include
-        android:id="@+id/ad_layout"
-        layout="@layout/native_ad_popup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_bodyfatchart"
-        android:layout_gravity="center" />
 </RelativeLayout>
